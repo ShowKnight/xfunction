@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_filter :verify_authenticity_token 
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update,:stat,:destroy]
 
   # GET /posts
   # GET /posts.json
@@ -24,8 +24,8 @@ class PostsController < ApplicationController
  
   # GET stat
   def stat
-    @stat = Post.find(1)  
-    render json: @stat
+    @post = Post.all.first(1)
+    render json: @post
   end  
 
    # POST /posts
@@ -64,8 +64,8 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
-    end
+       @post = Post.find(params[:id])
+     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
