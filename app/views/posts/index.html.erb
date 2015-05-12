@@ -12,9 +12,12 @@
         
        <th><%= model_class.human_attribute_name(:w1) %></th>
        <th><%= model_class.human_attribute_name(:s1) %></th>
+       <th><%= model_class.human_attribute_name(:y1) %></th>
        <th><%= model_class.human_attribute_name(:d1) %></th>
+
        <th><%= model_class.human_attribute_name(:w2) %></th>
        <th><%= model_class.human_attribute_name(:s2) %></th>
+       <th><%= model_class.human_attribute_name(:y2) %></th>
        <th><%= model_class.human_attribute_name(:d2) %></th>
 
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -27,12 +30,15 @@
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= post.content %></td>
 
-         <td><%= post.content.split(':')[0]%>%</td>
-         <td><%= post.content.split(':')[1]%>%</td>
-         <td><%= post.content.split(':')[2]%></td>
-         <td><%= post.content.split(':')[3]%>℃</td>
-         <td><%= post.content.split(':')[4]%>%</td>
-         <td><%= post.content.split(':')[5]%></td>
+         <td><%= post.content.split(':')[1]%>℃</td>
+         <td><%= post.content.split(':')[2]%>%</td>
+         <td><%= post.content.split(':')[3]%>%</td>
+         <td><%= post.content.split(':')[4]%></td>
+
+         <td><%= post.content.split(':')[6]%>℃</td>
+         <td><%= post.content.split(':')[7]%>%</td>
+         <td><%= post.content.split(':')[8]%>%</td>
+         <td><%= post.content.split(':')[9]%></td>
 
  
         
