@@ -21,20 +21,14 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
   end
- 
-  # GET stat
-  def stat
-    @post = Post.all.first(1)
-    render json: @post
-  end  
-
-   # POST /posts
+  
+ # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
     @post.save
     #json = @post
-    render json: {'1':'OK'}
+    render json: {'F':"ok"}
   end
 
   # PATCH/PUT /posts/1

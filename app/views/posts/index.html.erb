@@ -1,13 +1,15 @@
 <%- model_class = Post -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <%= link_to t('.new'),new_post_path,:class => 'btn btn-link' %>
 </div>
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:content) %></th>
-      
+        
        <th><%= model_class.human_attribute_name(:w1) %></th>
        <th><%= model_class.human_attribute_name(:s1) %></th>
        <th><%= model_class.human_attribute_name(:d1) %></th>
@@ -24,15 +26,17 @@
       <tr>
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= post.content %></td>
-        
-         <td><%= post.content.split(':')[0]%>℃</td>
+
+         <td><%= post.content.split(':')[0]%>%</td>
          <td><%= post.content.split(':')[1]%>%</td>
          <td><%= post.content.split(':')[2]%></td>
          <td><%= post.content.split(':')[3]%>℃</td>
          <td><%= post.content.split(':')[4]%>%</td>
          <td><%= post.content.split(':')[5]%></td>
+
+ 
         
-        <td><%=l post.created_at %></td>
+        <td><%=l post.created_at.localtime %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'btn btn-default btn-xs' %>
@@ -47,7 +51,9 @@
   </tbody>
 </table>
 
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_post_path,
-            :class => 'btn btn-primary' %>
+  <%= link_to 'On D1',status_ond1_path,class:'btn btn-success' %>
+  <%= link_to 'Off D1',status_offd1_path,class:'btn btn-warning' %>
+  <%= link_to 'On D2',status_ond2_path,class:'btn btn-success' %>
+  <%= link_to 'Off D2',status_offd2_path,class:'btn btn-warning' %>
+  <%= link_to 'On  All',status_onall_path,class:'btn btn-success' %>
+  <%= link_to 'Off  All',status_offall_path,data:{confirm:'Are you sure turn off all?'},class:'btn btn-danger' %>

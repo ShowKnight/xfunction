@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  get 'status/get'
+
   resources :posts
-  get 'posts/stat'
+  get 'status/get'
+  get 'status/ond1'
+  get 'status/offd1'
+  get 'status/ond2'
+  get 'status/offd2'
+  get 'status/onall'
+  get 'status/offall'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
