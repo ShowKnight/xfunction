@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'status/offd2'
   get 'status/onall'
   get 'status/offall'
-
+  get 'status/get&device_id=0' => 'status#get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
