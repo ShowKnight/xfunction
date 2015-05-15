@@ -4,6 +4,9 @@ class StatusController < ApplicationController
     render json: {'D':@status.content}
   end
   
+  def test
+  end
+
   def ond1
     @post = Post.find(1)
     @post.content[0]='1'

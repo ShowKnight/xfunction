@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     #json = @post
-    if(@post.content.index("xz2f"))
+    if(@post.content.index("xz2f") && @post.content[1]==':')
         @post.save
         render json: {'P':'ok'}
     else
