@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   skip_before_filter :verify_authenticity_token 
   before_action :set_post, only: [:show, :edit, :update,:stat,:destroy]
 
+  http_basic_authenticate_with name: "dhh", password: "secret",
+  except: [:create]
+
   # GET /posts
   # GET /posts.json
   def index

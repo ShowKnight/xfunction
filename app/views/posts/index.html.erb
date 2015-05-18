@@ -57,9 +57,11 @@
   </tbody>
 </table>
 
-  <%= link_to 'On D1',status_ond1_path,class:'btn btn-success' %>
-  <%= link_to 'Off D1',status_offd1_path,class:'btn btn-warning' %>
-  <%= link_to 'On D2',status_ond2_path,class:'btn btn-success' %>
-  <%= link_to 'Off D2',status_offd2_path,class:'btn btn-warning' %>
-  <%= link_to 'On  All',status_onall_path,class:'btn btn-success' %>
-  <%= link_to 'Off  All',status_offall_path,data:{confirm:'Are you sure turn off all?'},class:'btn btn-danger' %>
+  <div class="col-xs-4"></div>
+  <div class="col-xs-8">
+  <%= link_to 'On D1',status_ond1_path, :class=>'btn btn-success btn-lg' %>
+  <%= link_to 'Off D1',status_offd1_path,class:'btn btn-warning btn-sm' %>
+  <%= link_to 'On D2',status_ond2_path,class:'btn btn-success btn-xs' %>
+  <%= link_to 'Off D2',status_offd2_path,class:'btn btn-warning btn-xs' %>
+  <%= link_to 'On  All',status_onall_path,class:'btn btn-success btn-sm' %>
+  <%= link_to 'Off  All',status_offall_path,data:{confirm:'Are you sure turn off all?'},class:'btn btn-danger btn-lg' %></div>
