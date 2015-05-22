@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Content </th>
+    <th>"   "</th>
+    <th>      Time</th>
+  <tr>
+  <% @dggs.each do |dgg| %>
+    <tr>
+      <td><%= dgg.title %></td>
+      <td>" "</td><td>
+     <%= dgg.created_at.localtime.localtime %></td>
+    </tr>
+ <% end %>
+</table>

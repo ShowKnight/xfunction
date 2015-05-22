@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'status/get'
-
+  resources :dggs
   resources :posts
   get 'status/get'
   get 'status/ond1'
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'status/offall'
   get 'status/get&device_id=0' => 'status#get'
   get 'status/test'
+  root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

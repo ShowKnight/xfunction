@@ -1,21 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3";background="red"></div>
-    <div class="col-xs-9">
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="row">
-            <div class="col-xs-6"></div>
-            <div class="col-xs-6"></div>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="row">
-            <div class="col-xs-6"></div>
-            <div class="col-xs-6"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div>  <%= link_to 'Refresh',status_test_path, :class=>'btn btn-link' %></div>
+<%= high_chart("some_id",@chart)%>
+
+
