@@ -62,35 +62,37 @@
 
 <div class="page-header">
 <!--  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>  -->
-<h3>Posts</h3>
+<h3  style="text-align:center">Remote environmental monitoring</h3>
 </div>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th> 
-      <th><%= model_class.human_attribute_name(:content) %></th>
-        
-       <th><%= model_class.human_attribute_name(:w1) %></th>
-       <th><%= model_class.human_attribute_name(:s1) %></th>
-       <th><%= model_class.human_attribute_name(:y1) %></th>
-       <th><%= model_class.human_attribute_name(:d1) %></th>
+       <th><%= model_class.human_attribute_name(:~) %></th>
+       <th><%= model_class.human_attribute_name(:id) %></th> 
+       <!--<th><%= model_class.human_attribute_name(:content) %></th>-->
 
-       <th><%= model_class.human_attribute_name(:w2) %></th>
-       <th><%= model_class.human_attribute_name(:s2) %></th>
-       <th><%= model_class.human_attribute_name(:y2) %></th>
-       <th><%= model_class.human_attribute_name(:d2) %></th>
+       <th><%= model_class.human_attribute_name(:TempA) %></th>
+       <th><%= model_class.human_attribute_name(:ShiA) %></th>
+       <th><%= model_class.human_attribute_name(:SmokeA) %></th>
+       <th><%= model_class.human_attribute_name(:ElectA) %></th>
+
+       <th><%= model_class.human_attribute_name(:TempB) %></th>
+       <th><%= model_class.human_attribute_name(:sShiB) %></th>
+       <th><%= model_class.human_attribute_name(:SmokeB) %></th>
+       <th><%= model_class.human_attribute_name(:ElectB) %></th>
 
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <!--<th><%=t '.actions', :default => t("helpers.actions") %></th>-->
     </tr>
   </thead>
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to post.id, post_path(post) %></td> 
-        <td><%= post.content %></td>
+        <td>  </td>
 
+        <td><%= link_to post.id, post_path(post) %></td> 
+       <!-- <td><%= post.content %></td>-->
          <td><%= post.content.split(':')[1]%>℃</td>
          <td><%= post.content.split(':')[2]%>%</td>
          <td><%= post.content.split(':')[3]%>%</td>
@@ -104,7 +106,7 @@
  
         
         <td><%=post.created_at.localtime.strftime('%Y/%m/%d %H:%M:%S') %></td>
-        <td>
+        <!--<td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -112,7 +114,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
-        </td>
+        </td>-->
       </tr>
     <% end %>
   </tbody>

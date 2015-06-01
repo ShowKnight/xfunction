@@ -4,7 +4,60 @@ class StatusController < ApplicationController
     @status = Post.find(1)
     render json: {'D':@status.content}
   end
-  
+ 
+  def apilogin
+    @user = User.find(1);
+    render json:{"username":@user.username,"password":@user.password};
+  end
+  def apiparams
+    @post = Post.last(1)[0]
+    render json:{"content":@post.content,"time":@post.created_at.localtime.strftime(";%Y-%m-%d %H:%M:%S;")}
+  end
+ 
+  def apitest
+     @post = Post.find(1)
+     render json:{"test":@post.content}
+  end  
+  def apiond1
+    @post = Post.find(1)
+    @post.content[0]='1'
+    @post.update(content:@post.content)
+    render json: {"status":@post.content}
+  end 
+  def apioffd1
+    @post = Post.find(1)
+    @post.content[0]='0'
+    @post.update(content:@post.content)
+    
+    render json: {"status":@post.content}
+  end
+  def apiond2
+    @post = Post.find(1)
+    @post.content[1]='1'
+    @post.update(content:@post.content)
+    
+    render json: {"status":@post.content}
+  end
+  def apioffd2
+    @post = Post.find(1)
+    @post.content[1]='0'
+    @post.update(content:@post.content)
+    render json: {"status":@post.content}
+
+  end
+
+  def apionall
+    @post = Post.find(1)
+    @post.update(content:"11")
+    render json: {"status":@post.content}
+  end
+
+  def apioffall
+    @post = Post.find(1)
+    @post.update(content:"00")
+    render json: {"status":@post.content}
+  end
+ 
 
   def ond1
     @post = Post.find(1)

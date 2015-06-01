@@ -1,4 +1,13 @@
 class DggsController < ApplicationController
+skip_before_filter :verify_authenticity_token
+  before_action :set_post, only: [:show, :edit, :update,:stat,:destroy]
+
+  def graph
+        @chart1 = LazyHighCharts::HighChart.new('graph') do |f|
+       f.series:name=>'Updated',:data=>[5,1,2,3,4,5] 
+  end
+  end
+
   def new
     @dgg = Dgg.new
   end

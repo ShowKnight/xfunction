@@ -12,7 +12,21 @@ Rails.application.routes.draw do
   get 'status/get&device_id=0' => 'status#get'
   get 'status/test'
   root 'posts#index'
+  
+  get 'status/apiget'
+  get 'status/apiond1'
+  get 'status/apioffd1'
+  get 'status/apiond2'
+  get 'status/apioffd2'
+  get 'status/apionall'
+  get 'status/apioffall'
+  get 'status/apitest'
+  get 'status/apiparams'
+  get 'status/apilogin'
+
+   get 'dggs/graph'
   # The priority is based upon order of creation: first created -> highest priority.
+
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
