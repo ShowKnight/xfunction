@@ -100,8 +100,9 @@ class StatusController < ApplicationController
     @posts = Post.all.last(10)
     redirect_to posts_url
   end
+  
   def test
-     @lastid = Post.last(1)[0].id
+    @lastid = Post.last(1)[0].id
      @firstid = @lastid -9
      @temp1 = Array.new
      @temp2 = Array.new
@@ -126,10 +127,8 @@ class StatusController < ApplicationController
   ]
 
   f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
-#  f.chart({:defaultSeriesType=>"column"})
-end
   end
-
+  end
 end
 
 
