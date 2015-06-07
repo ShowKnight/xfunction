@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.last(10)
+    @posts = Post.order("id DESC").paginate :page => params[:page],:per_page =>9
+    @statuss = Post.find(1).content
   end
 
   # GET /posts/1
